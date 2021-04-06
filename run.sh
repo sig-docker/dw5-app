@@ -12,8 +12,8 @@ die () {
 xtail $(dirname $LOGGING_FILE) &
 
 JAR=$(ls $DEPLOY_LOCATION/*.jar |head -n 1)
-export SERVER_SERVLET_CONTEXT_PATH=$(basename "$JAR" .jar)
-export SERVLET_CONTEXT_PATH=$(basename "$JAR" .jar)
+export SERVER_SERVLET_CONTEXT_PATH=/$(basename "$JAR" .jar)
+export SERVLET_CONTEXT_PATH=/$(basename "$JAR" .jar)
 
 echo "Starting $JAR"
 echo "Context Path (server_servlet): $SERVER_SERVLET_CONTEXT_PATH"
