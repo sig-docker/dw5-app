@@ -1,9 +1,4 @@
-#Dockerfile for Degreeworks 5 ApplicantAPI container
-FROM openjdk:8
-
-# parameterized environment variables
-# removed for testing
-#    SERVER_SERVLET_CONTEXT_PATH=/${APP_NAME} \
+FROM openjdk:11
 
 ENV SERVER_PORT=8443 \
     SERVER_SSL_KEY_STORE=/usr/local/ssl/selfSigned.jks \
