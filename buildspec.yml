@@ -13,7 +13,7 @@ phases:
     commands:
       - echo "Staging JAR ..."
       - aws s3 cp s3://${APP_BUCKET}/${APP_BUCKET_PREFIX}/${APP_NAME}/${APP_VER}/app/ binaries/ --recursive --include "*"
-      - '[ -n "$DOCKER_HUB_USER" ] &&  docker login -u "$DOCKER_HUB_USER" -p "$DOCKER_HUB_PASSWORD"'
+      - bash -c "[ -n '$DOCKER_HUB_USER' ] &&  docker login -u '$DOCKER_HUB_USER' -p '$DOCKER_HUB_PASSWORD'"
 
   build:
     commands:
